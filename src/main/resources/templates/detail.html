@@ -5,6 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-
+<div>
+    <div id="title" th:text="${boardDetail.title}">
+    </div>
+    <div th:text="${boardDetail.getCreateDate()}">
+    </div>
+    <div id="content" th:text="${boardDetail.content}">
+    </div>
+</div>
 </body>
+<script>
+
+</script>
 </html>

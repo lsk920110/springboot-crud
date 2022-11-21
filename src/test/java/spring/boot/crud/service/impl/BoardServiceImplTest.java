@@ -1,20 +1,19 @@
 package spring.boot.crud.service.impl;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import spring.boot.crud.entity.BoardEntity;
-import spring.boot.crud.repository.CRUDrepository;
+import spring.boot.crud.repository.BoardRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
-class CRUDserviceImplTest {
+class BoardServiceImplTest {
 
 
     @Autowired
-    private CRUDrepository cruDrepository;
+    private BoardRepository boardRepository;
 
     @DisplayName("board entity가 작동하는지 테스트")
     @Test
@@ -31,7 +30,7 @@ class CRUDserviceImplTest {
         entity.setContent("testcontent");
         entity.setTitle("testtitle");
 
-        BoardEntity boardEntity = this.cruDrepository.save(entity);
+        BoardEntity boardEntity = this.boardRepository.save(entity);
 
         assertEquals(boardEntity.getTitle(),"testtitle");
         assertEquals(boardEntity.getContent(),"testcontent");
@@ -54,7 +53,7 @@ class CRUDserviceImplTest {
         entity.setContent("testcontent");
         entity.setTitle("testtitle");
 
-        BoardEntity boardEntity = this.cruDrepository.save(entity);
+        BoardEntity boardEntity = this.boardRepository.save(entity);
 
 //        System.out.println("insertBoardEntity : "+boardEntity);
 
@@ -62,7 +61,7 @@ class CRUDserviceImplTest {
         boardEntity.setTitle("testcontetupdate");
         boardEntity.setContent("testtitleupdate");
 
-        BoardEntity updateBoardEntity = this.cruDrepository.save(boardEntity);
+        BoardEntity updateBoardEntity = this.boardRepository.save(boardEntity);
 //        System.out.println("updateBoardEntity : "+updateBoardEntity);
 
         assertEquals(boardEntity.getCreateDate(),updateBoardEntity.getCreateDate());

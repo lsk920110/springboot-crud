@@ -1,4 +1,4 @@
-package spring.boot.crud.vo;
+package spring.boot.crud.vo.Board;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CRUDVO {
+public class BoardVO {
 
     private String title;
     private String content;

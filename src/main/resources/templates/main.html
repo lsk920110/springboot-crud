@@ -20,6 +20,14 @@
     </div>
 </div>
 <!-- 리스트 영역 -->
+<table>
+    <tr th:each="board:${boardList}">
+        <td th:text="${board.id}"></td>
+        <td th:text="${board.title}"></td>
+        <td th:text="${board.createDate}"></td>
+        <!--        <td th:text="${board.create}"></td>-->
+    </tr>
+</table>
 <div id="list">
 
 </div>
